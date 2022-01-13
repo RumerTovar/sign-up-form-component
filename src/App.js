@@ -13,6 +13,7 @@ function App() {
     </p>
     <Offers />
     <Form />
+    <p>By clicking the button, you are agreeing to our Terms and Services</p>
    </main>
   </>
  );
