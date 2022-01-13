@@ -17,7 +17,7 @@ const ContactForm = () => {
   useForm(initialForm);
 
  return (
-  <div>
+  <section className='formContainer'>
    <form onSubmit={handleSubmit}>
     <Inputs
      type='text'
@@ -40,7 +40,7 @@ const ContactForm = () => {
     <Inputs
      type='email'
      name='email'
-     placeholder='email'
+     placeholder='Email Address'
      onBlur={handleBlur}
      onChange={handleChange}
      value={form.email}
@@ -56,9 +56,15 @@ const ContactForm = () => {
      errors={errors}
     />
 
-    <input type='submit' value='CLAIM YOUR FREE TRIAL' />
+    <input className='submit' type='submit' value='CLAIM YOUR FREE TRIAL' />
    </form>
-  </div>
+   <footer>
+    <p>
+     By clicking the button, you are agreeing to our
+     <span className='Terms'> Terms and Services</span>
+    </p>
+   </footer>
+  </section>
  );
 };
 

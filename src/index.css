@@ -1,3 +1,98 @@
 body {
- background-color: rgb(49, 86, 170);
+ background-color: hsl(0, 100%, 74%);
+ display: grid;
+ grid-template-columns: 100%;
+ grid-template-rows: 100%;
+ background-image: url('./images/bg-intro-mobile.png');
+}
+main {
+ padding: 0rem;
+ margin: 1rem;
+ font-family: 'Poppins', sans-serif;
+ color: hsl(247, 21%, 92%);
+ margin-bottom: 4rem;
+}
+
+h1 {
+ padding-left: 1rem;
+ padding-right: 1rem;
+}
+.title {
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+}
+
+p.Offers {
+ background-color: hsl(248, 32%, 49%);
+ padding: 1rem;
+ padding-left: 3rem;
+ padding-right: 3rem;
+ border-radius: 0.5rem;
+ margin-bottom: 1.5rem;
+ text-align: center;
+ box-shadow: 0px 10px rgba(68, 68, 68, 0.253);
+}
+
+.OfferSpan {
+ font-weight: 800;
+}
+
+.submit {
+ background-color: hsl(154, 59%, 51%);
+ color: white;
+}
+
+.Terms {
+ color: hsl(0, 100%, 74%);
+}
+
+.formContainer {
+ display: flex;
+ flex-direction: column;
+ background-color: white;
+ border-radius: 0.5rem;
+}
+
+section.formContainer {
+ box-shadow: 0px 10px rgba(68, 68, 68, 0.253);
+}
+
+form {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background-color: white;
+ padding: 1rem;
+ border-top-left-radius: 0.5rem;
+ border-top-right-radius: 0.5rem;
+}
+
+input {
+ width: 90%;
+ padding: 0.5rem;
+ padding-top: 1rem;
+ padding-bottom: 1rem;
+ margin: 0.5rem;
+ font-weight: 800;
+ border-radius: 0.5rem;
+ border-style: solid;
+ border-color: hsl(0, 0%, 92%);
+}
+
+input.submit {
+ width: 17.84375rem;
+}
+
+input::placeholder {
+ padding-left: 1rem;
+}
+
+footer {
+ font-size: x-small;
+ margin-top: -1.8rem;
+ margin-left: 3.5rem;
+ margin-right: 3.5rem;
+ margin-bottom: 0.5rem;
+ text-align: center;
 }
