@@ -1,8 +1,5 @@
 body {
  background-color: hsl(0, 100%, 74%);
- display: grid;
- grid-template-columns: 100%;
- grid-template-rows: 100%;
  background-image: url('./images/bg-intro-mobile.png');
 }
 main {
