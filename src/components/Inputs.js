@@ -22,8 +22,7 @@ const Inputs = ({
     onChange={onChange}
     value={value}
    />
-   {/*   {errors[name] && <p style={styles}>{errors[name]}</p>} */}
-   {<p>{errors[name]}</p>}
+   {errors[name] && <p style={styles}>{errors[name]}</p>}
   </>
  );
 };
