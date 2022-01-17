@@ -3,13 +3,9 @@ import Inputs from './Inputs';
 
 const initialForm = {
  firstName: '',
- firstNameValid: null,
  lastName: '',
- lastNameValid: null,
  email: '',
- emailValid: null,
  password: '',
- passwordValid: null,
 };
 
 const ContactForm = () => {
@@ -25,7 +21,7 @@ const ContactForm = () => {
      placeholder='First Name'
      onBlur={handleBlur}
      onChange={handleChange}
-     value={form.firstName}
+     value={form}
      errors={errors}
     />
     <Inputs
@@ -34,7 +30,7 @@ const ContactForm = () => {
      placeholder='Last Name'
      onBlur={handleBlur}
      onChange={handleChange}
-     value={form.lastName}
+     value={form}
      errors={errors}
     />
     <Inputs
@@ -43,7 +39,7 @@ const ContactForm = () => {
      placeholder='Email Address'
      onBlur={handleBlur}
      onChange={handleChange}
-     value={form.email}
+     value={form}
      errors={errors}
     />
     <Inputs
@@ -52,11 +48,13 @@ const ContactForm = () => {
      placeholder='Password'
      onBlur={handleBlur}
      onChange={handleChange}
-     value={form.password}
+     value={form}
+     onKeyUp={handleBlur}
      errors={errors}
     />
-
-    <input className='submit' type='submit' value='CLAIM YOUR FREE TRIAL' />
+    <span>
+     <input className='submit' type='submit' value='CLAIM YOUR FREE TRIAL' />
+    </span>
    </form>
    <footer>
     <p>

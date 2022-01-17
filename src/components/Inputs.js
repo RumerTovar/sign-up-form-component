@@ -1,3 +1,5 @@
+import iconError from '../images/icon-error.svg';
+
 const Inputs = ({
  type,
  name,
@@ -7,22 +9,35 @@ const Inputs = ({
  value,
  errors,
 }) => {
- let styles = {
-  fontWeight: 'bold',
-  color: '#dc3545',
+ const className = () => {
+  if (errors[name] === undefined || errors[name] === true) {
+   return 'input';
+  }
+  return 'error';
  };
 
  return (
   <>
    <input
+    className={className()}
     type={type}
     name={name}
     placeholder={placeholder}
     onBlur={onBlur}
     onChange={onChange}
-    value={value}
+    onKeyUp={onBlur}
+    value={value[name]}
    />
-   {errors[name] && <p style={styles}>{errors[name]}</p>}
+   {errors[name] === undefined || errors[name] === true ? null : (
+    <>
+     <div className='parent'>
+      <img className='iconError' src={iconError} alt='' />
+     </div>
+     <div className='error'>
+      <p className='errorContent'> {errors[name]}</p>
+     </div>
+    </>
+   )}
   </>
  );
 };

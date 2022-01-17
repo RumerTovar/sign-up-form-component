@@ -10,60 +10,60 @@ export const useForm = (initialForm) => {
   let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
   let regexPassword = /^.{4,12}$/; // 4 to 12 digits
 
-  const firstNameValid = () => {
+  const firstNameValidation = () => {
    if (!form.firstName.trim()) {
     errors.firstName = 'First Name cannot be empty';
    } else if (!regexName.test(form.firstName.trim())) {
     errors.firstName = "The 'First Name' field only accepts letters and blanks";
    } else {
-    form.firstNameValid = true;
+    errors.firstName = true;
    }
   };
 
-  const lastNameValid = () => {
+  const lastNameValidation = () => {
    if (!form.lastName.trim()) {
     errors.lastName = 'Last Name cannot be empty';
    } else if (!regexName.test(form.lastName.trim())) {
     errors.lastName = "The 'Last Name' field only accepts letters and blanks";
    } else {
-    form.lastNameValid = true;
+    errors.lastName = true;
    }
   };
 
-  const emailValid = () => {
+  const emailValidation = () => {
    if (!form.email.trim()) {
     errors.email = 'Email cannot be empty';
    } else if (!regexEmail.test(form.email.trim())) {
     errors.email = 'Looks like this is not an email';
    } else {
-    form.emailValid = true;
+    errors.email = true;
    }
   };
 
-  const passwordValid = () => {
+  const passwordValidation = () => {
    if (!form.password.trim()) {
     errors.password = 'Password cannot be empty';
    } else if (!regexPassword.test(form.password.trim())) {
     errors.password = 'The password must contain at least 4 digits, maximum 12';
    } else {
-    form.passwordValid = true;
+    errors.password = true;
    }
   };
 
-  const checkAll = () => {
-   firstNameValid();
-   lastNameValid();
-   emailValid();
-   passwordValid();
+  const validateAll = () => {
+   firstNameValidation();
+   lastNameValidation();
+   emailValidation();
+   passwordValidation();
   };
 
   const selectValidation = (target) => {
    const validations = {
-    firstName: firstNameValid,
-    lastName: lastNameValid,
-    email: emailValid,
-    password: passwordValid,
-    undefined: checkAll,
+    firstName: firstNameValidation,
+    lastName: lastNameValidation,
+    email: emailValidation,
+    password: passwordValidation,
+    undefined: validateAll,
    };
 
    const select = validations[target];
@@ -78,7 +78,6 @@ export const useForm = (initialForm) => {
 
  const handleChange = (e) => {
   const { name, value } = e.target;
-
   setForm({
    ...form,
    [name]: value,
@@ -87,27 +86,26 @@ export const useForm = (initialForm) => {
 
  const handleBlur = (e) => {
   let target = e.target.name;
+  let objKey = Object.keys(validateForm(form, target));
+  let objValue = Object.values(validateForm(form, target));
   setErrors({
    ...errors,
-   [Object.keys(validateForm(form, target))]: Object.values(
-    validateForm(form, target)
-   ),
+   [objKey[0]]: objValue[0],
   });
  };
 
  const handleSubmit = (e) => {
   e.preventDefault();
-
   setErrors(validateForm(form, undefined));
-
   if (
-   form.firstNameValid === true &&
-   form.lastNameValid === true &&
-   form.emailValid === true &&
-   form.passwordValid === true
+   errors.firstName === true &&
+   errors.lastName === true &&
+   errors.email === true &&
+   errors.password === true
   ) {
    alert('enviando formulario');
   } else {
+   console.log('formulario incorrecto');
    return;
   }
  };
