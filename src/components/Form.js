@@ -43,7 +43,7 @@ const ContactForm = () => {
      errors={errors}
     />
     <Inputs
-     type='text'
+     type='password'
      name='password'
      placeholder='Password'
      onBlur={handleBlur}

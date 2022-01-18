@@ -38,6 +38,9 @@ p.Offers {
 .submit {
  background-color: hsl(154, 59%, 51%);
  color: white;
+ border: none;
+ box-shadow: 0px 4px hsla(154, 72%, 31%, 0.609);
+ letter-spacing: 0.1rem;
 }
 
 .Terms {
@@ -75,6 +78,7 @@ input {
  border-radius: 0.5rem;
  border-style: solid;
  border-color: hsl(0, 0%, 92%);
+ text-indent: 1rem;
 }
 
 input.submit {
@@ -83,7 +87,7 @@ input.submit {
 }
 
 input::placeholder {
- padding-left: 1rem;
+ padding-left: 0rem;
 }
 
 footer {
@@ -111,6 +115,11 @@ div.error {
 
 input.error {
  border-color: hsl(0, 100%, 74%);
+ color: hsl(0, 100%, 74%);
+}
+
+input.error::placeholder {
+ color: hsl(0, 100%, 74%);
 }
 
 input.error:focus {
@@ -131,4 +140,44 @@ input.error:focus {
 .errorContent {
  margin: 0;
  padding: 0;
+}
+
+@media only screen and (min-width: 1440px) {
+ main {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 100vh;
+  grid-template-areas: 'title title form form';
+  align-items: center;
+ }
+ .title {
+  margin-left: 8rem;
+  grid-area: title;
+  text-align: left;
+ }
+
+ h1 {
+  font-size: 3rem;
+  margin: 0;
+ }
+
+ .description {
+  padding-left: 1rem;
+  padding-right: 2rem;
+  font-weight: 500;
+ }
+
+ .form {
+  grid-area: form;
+  margin-right: 8rem;
+  margin-left: 0rem;
+ }
+
+ div.error {
+  width: 31.399375rem;
+ }
+
+ .iconError {
+  left: 13rem;
+ }
 }
