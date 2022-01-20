@@ -103,9 +103,9 @@ export const useForm = (initialForm) => {
    errors.email === true &&
    errors.password === true
   ) {
-   alert('enviando formulario');
+   alert('submitting form');
   } else {
-   console.log('formulario incorrecto');
+   console.log('wrong form');
    return;
   }
  };
