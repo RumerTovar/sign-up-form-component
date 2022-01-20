@@ -35,14 +35,6 @@ p.Offers {
  font-weight: 800;
 }
 
-.submit {
- background-color: hsl(154, 59%, 51%);
- color: white;
- border: none;
- box-shadow: 0px 4px hsla(154, 72%, 31%, 0.609);
- letter-spacing: 0.1rem;
-}
-
 .Terms {
  color: hsl(0, 100%, 74%);
 }
@@ -79,11 +71,18 @@ input {
  border-style: solid;
  border-color: hsl(0, 0%, 92%);
  text-indent: 1rem;
+ outline: none;
+ transition: 0.3s ease all;
 }
 
-input.submit {
- width: 17.84375rem;
+.submit {
+ background-color: hsl(154, 59%, 51%);
+ color: white;
+ border: none;
+ box-shadow: 0px 4px hsla(154, 72%, 31%, 0.609);
+ letter-spacing: 0.1rem;
  cursor: pointer;
+ width: calc(90% + 1.1rem);
 }
 
 input::placeholder {
@@ -103,7 +102,8 @@ footer {
 div.error {
  display: flex;
  justify-content: flex-end;
- width: 17.84375rem;
+ width: 90%;
+ /* width: 17.84375rem; */
  color: hsl(0, 100%, 74%);
  font-style: italic;
  font-size: small;
@@ -130,12 +130,13 @@ input.error:focus {
 
 .parent {
  position: relative;
+ width: 100%;
 }
 
 .iconError {
  position: absolute;
  bottom: 1.35rem;
- left: 7rem;
+ left: 85%;
 }
 .errorContent {
  margin: 0;
@@ -143,12 +144,17 @@ input.error:focus {
 }
 
 @media only screen and (min-width: 1440px) {
+ html {
+  margin: 0px;
+  padding: 0px;
+ }
  main {
   display: grid;
   grid-template-columns: repeat(4, 25%);
-  grid-template-rows: 100vh;
+  grid-template-rows: 95vh;
   grid-template-areas: 'title title form form';
   align-items: center;
+  margin-bottom: 0rem;
  }
  .title {
   margin-left: 8rem;
@@ -178,6 +184,6 @@ input.error:focus {
  }
 
  .iconError {
-  left: 13rem;
+  left: 90%;
  }
 }

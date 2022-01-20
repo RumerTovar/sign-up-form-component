@@ -52,9 +52,7 @@ const ContactForm = () => {
      onKeyUp={handleBlur}
      errors={errors}
     />
-    <span>
-     <input className='submit' type='submit' value='CLAIM YOUR FREE TRIAL' />
-    </span>
+    <input className='submit' type='submit' value='CLAIM YOUR FREE TRIAL' />
    </form>
    <footer>
     <p>
