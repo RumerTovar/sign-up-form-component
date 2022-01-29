@@ -98,5 +98,4 @@ Here is the link where I found the solution:
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
 - Frontend Mentor - [@Rtf747](https://www.frontendmentor.io/profile/Rtf747)
