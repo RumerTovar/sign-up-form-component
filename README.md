@@ -40,8 +40,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Link](https://github.com/Rtf747/sign-up-form-component)
-- Live Site URL: [Link](https://rtf747.github.io/sign-up-form-component/)
+- Solution URL: [Link](https://github.com/rumertovar/sign-up-form-component)
+- Live Site URL: [Link](https://rumertovar.github.io/sign-up-form-component/)
 
 ## My process
 
